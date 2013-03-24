@@ -3,23 +3,14 @@
   <head>
     <title><%= title %></title>
     <%= csrf_meta_tag %>
-    <%= stylesheet_link_tag 'custom', :media => 'screen' %>
+    <%= stylesheet_link_tag 'custom', media: 'all' %>
+    <%= render 'layouts/shim' %>
   </head>
   <body>
     <div class="container">
-        <header>
-            <%= image_tag("logo.png", :alt => "Sample app", :class => "round") %>
-            <nav class="round">
-                <ul>
-                    <li><%= link_to "Home", '#' %></li>
-                    <li><%= link_to "About", '#' %></li>
-                    <li><%= link_to "Sign in", '#' %></li>
-                </ul>
-            </nav>
-        </header>
-        <section class="round">
-            <%= yield %>
-        </section>
+        <%= render 'layouts/header' %>
+        <%= yield %>
+        <%= render 'layouts/footer' %>
     </div>
   </body>
 </html>
